@@ -416,5 +416,5 @@ let cost = parseInt(prompt("Enter cost: "));
 let discount = cost >= 5000 ? 15/100 :cost >= 150 ? 10/100 : cost >= 50 ? 5/100: 0;
 let total = cost - cost*discount;
 
-discount ? console.log(`Expense is ${cost}TK, Applied discount ${discount * 100}%. Total expenses is: ${Math.floor(total)}TK`) : console.log(`Total expenses is: ${total}TK`);
+discount ? console.log(`Expense is ${cost}TK, Applied discount ${discount * 100}%. Total expenses is: ${Math.floor(total)}TK`) : console.log(`Total expenses is: ${total}`);
 
