@@ -43,3 +43,19 @@ li{
 .mb-3{
     margin-bottom: 1rem;
 }
+table, th, td{
+    border: 1px solid black !important;
+    padding: .5rem;
+}
+.image{
+    aspect-ratio: 4/3;
+}
+.image img{
+    height: 100%;
+    object-fit: cover;
+}
+.div{
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 10px;
+    overflow: hidden;
+}

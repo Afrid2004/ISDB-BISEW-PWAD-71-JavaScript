@@ -14,7 +14,7 @@
     <title>All About JavaScript</title>
   </head>
   <body>
-    <h1>Hello, JavaScript!</h1>
+    <!-- <h1>Hello, JavaScript!</h1>
 
     <button class="btn-primary">Click Me</button>
 
@@ -199,6 +199,89 @@
           </div>
         </div>
       </form>
+    </div>
+
+    <div>
+      <table id="table">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Salary</th>
+          <th>Password</th>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <h3>Prime Number</h3>
+      <label for="number">Enter a Number</label>
+      <input type="number" name="number" id="number">
+
+      <button class="btn btn-primary" onclick="handlePrime()">Submit</button>
+      <div class="resultIn"></div>
+    </div> -->
+
+    <div class="container">
+      <h1 class="text-center">CRUD OPerations</h1>
+      <div class="row">
+        <div class="col-5" style="position: sticky; top: 1rem; align-self: flex-start;">
+          <form id="form">
+            <div class="mb-2">
+              <label for="name" class="form-label">Fruit Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                id="name"
+                required
+                placeholder="Enter fruit name..."
+              />
+            </div>
+            <div class="mb-2">
+              <label for="link" class="form-label">Fruit Image</label>
+              <input
+                type="text"
+                class="form-control"
+                name="link"
+                id="link"
+                required
+                placeholder="Enter fruit image link..."
+              />
+            </div>
+            <div class="mb-2">
+              <label for="price" class="form-label">Price</label>
+              <input
+                type="number"
+                class="form-control"
+                name="price"
+                id="price"
+                required
+                placeholder="Enter fruit price..."
+              />
+            </div>
+            <div class="mb-2">
+              <label for="desc" class="form-label">Description</label>
+              <textarea
+                class="form-control"
+                name="desc"
+                id="desc"
+                required
+                placeholder="Enter fruit description..."
+              ></textarea>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-dark w-100">
+                Add Fruit
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-7">
+          <div class="row fruitShow"></div>
+        </div>
+      </div>
     </div>
 
     <script
