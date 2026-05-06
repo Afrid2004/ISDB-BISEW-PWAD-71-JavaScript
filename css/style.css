@@ -59,3 +59,9 @@ table, th, td{
     border-radius: 10px;
     overflow: hidden;
 }
+
+@media print {
+    button{
+        display: none !important;
+    }
+}

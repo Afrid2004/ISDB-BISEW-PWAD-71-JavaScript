@@ -501,87 +501,252 @@
 //   }
 //   return result.innerHTML = `${inputvalue} is a prime number`
 // }
-let fruitShow = document.querySelector(".fruitShow"),
-  form = document.getElementById("form");
-let fruits = [
-  {
-    id: 1,
-    name: "Watermelon",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgj8y34p2WopNyKJG7qKvB1hfjJjYdWcV6Iw&s",
-    price: "450",
-    description: "Favourite",
-  },
-  {
-    id: 2,
-    name: "Orange",
-    image:
-      "https://www.health.com/thmb/OZgW2YQtFb9qJ3PbySNei3YdgPw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Health-Stocksy_txp5e95690asrw300_Medium_934585-e870449543284eed8aa4be52fc09a4ed.jpg",
-    price: "350",
-    description: "My Favourite Fruit",
-  }
-];
+// let fruitShow = document.querySelector(".fruitShow"),
+//   name = document.getElementById("name"),
+//   link = document.getElementById("link"),
+//   price = document.getElementById("price"),
+//   desc = document.getElementById("desc"),
+//   form = document.getElementById("form");
+// let fruits = [
+//   {
+//     id: 1,
+//     name: "Watermelon",
+//     image:
+//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgj8y34p2WopNyKJG7qKvB1hfjJjYdWcV6Iw&s",
+//     price: "450",
+//     description: "Favourite",
+//   },
+//   {
+//     id: 2,
+//     name: "Orange",
+//     image:
+//       "https://www.health.com/thmb/OZgW2YQtFb9qJ3PbySNei3YdgPw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Health-Stocksy_txp5e95690asrw300_Medium_934585-e870449543284eed8aa4be52fc09a4ed.jpg",
+//     price: "350",
+//     description: "My Favourite Fruit",
+//   }
+// ];
 
-//create products
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let newFruit = {
-    id: fruits.length + 1,
-    name: e.target.name.value,
-    image: e.target.link.value,
-    price: e.target.price.value,
-    description: e.target.desc.value,
-  };
-  fruits.push(newFruit);
-  allProducts();
-  console.log(fruits);
-  e.target.reset();
-});
+// //create products
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   let newFruit = {
+//     id: fruits.length + 1,
+//     name: e.target.name.value,
+//     image: e.target.link.value,
+//     price: e.target.price.value,
+//     description: e.target.desc.value,
+//   };
+//   fruits.push(newFruit);
+//   allProducts();
+//   console.log(fruits);
+//   e.target.reset();
+// });
 
-//read products
-function allProducts() {
-  let html = "";
-  fruits.forEach((fruit) => {
-    html += `
-    <div class="col-lg-6 mb-3">
-            <div class="div ">
-              <div class="image">
-                <img src="${fruit.image}" class="w-100" alt="image" />
-              </div>
-              <div class="p-3">
-                <div>
-                  <h3>${fruit.name}</h3>
-                  <p>
-                    ${fruit.description}
-                  </p>
-                  <h3>${fruit.price}TK</h3>
-                </div>
-                <div>
-                  <button class="btn btn-dark">Buy Now</button>
-                  <button class="btn btn-danger" onclick="hanndleDelete(${fruit.id})">Delete</button>
-                </div>
-              </div>
-            </div>
-          </div>
-    `;
-  });
-  fruitShow.innerHTML = html;
-}
-allProducts();
+// //read products
+// function allProducts() {
+//   let html = "";
+//   fruits.forEach((fruit) => {
+//     html += `
+//     <div class="col-lg-6 mb-3">
+//             <div class="div ">
+//               <div class="image">
+//                 <img src="${fruit.image}" class="w-100" alt="image" />
+//               </div>
+//               <div class="p-3">
+//                 <div>
+//                   <h3>${fruit.name}</h3>
+//                   <p>
+//                     ${fruit.description}
+//                   </p>
+//                   <h3>${fruit.price}TK</h3>
+//                 </div>
+//                 <div>
+//                   <button class="btn btn-dark">Buy Now</button>
+//                   <button class="btn btn-danger" onclick="hanndleDelete(${fruit.id})">Delete</button>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//     `;
+//   });
+//   fruitShow.innerHTML = html;
+// }
+// allProducts();
 
 //update products
-fruits = fruits.map((fruit) => {
-  if (fruit.id == 5) {
-    return { ...fruit, name: "Watermelon" };
-  }
-  return fruit;
-});
+
+// fruits = fruits.map((fruit) => {
+//   if (fruit.id == 5) {
+//     return { ...fruit, name: "Watermelon" };
+//   }
+//   return fruit;
+// });
 
 //delete products
-function hanndleDelete(id) {
-  fruits = fruits.filter((fruit) => {
-    return fruit.id != id;
-  });
-  allProducts();
-  console.log(fruits);
+// function hanndleDelete(id) {
+//   fruits = fruits.filter((fruit) => {
+//     return fruit.id != id;
+//   });
+//   allProducts();
+//   console.log(fruits);
+// }
+
+
+// let form = document.getElementById("form");
+
+// form.addEventListener("submit" , (e) => {
+//   e.preventDefault();
+//   let name = form.name.value;
+//   let email = form.email.value;
+//   let city = form.city.value;
+//   let genders = form.gender;
+//   let selectedGender = "";
+//   let subjects = form.subject;
+//   let selectedSubjects = [];
+//   let message = form.message.value;
+
+//   for(gender of genders){
+//     if(gender.checked){
+//       selectedGender = gender.value;
+//     }
+//   }
+//   for(subject of subjects){
+//     if(subject.checked){
+//       selectedSubjects.push(subject.value);
+//     }
+//   }
+//   selectedSubjects.join(", ")
+//   console.log({
+//     name,
+//     email,
+//     city,
+//     gender : selectedGender,
+//     subjects : selectedSubjects,
+//     message
+//   });
+
+//   let win = window.open("", "_blank", "width: 300, height: 300");
+//   win.document.write(
+//     `<html>
+//     <head>
+//       <style>
+//         @media print {
+//           button {
+//             display: none !important;
+//           }
+//         }
+//       </style>
+//       <link
+//       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+//       rel="stylesheet"
+//       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+//       crossorigin="anonymous"
+//     />
+//     </head>
+//     <body>
+//       <h1 class="text-primary">Name: ${name}</h1>
+//       <h1>Email: ${email}</h1>
+//       <h1>City: ${city}</h1>
+//       <h1>Gender: ${selectedGender}</h1>
+//       <h1>Subject: ${selectedSubjects}</h1>
+//       <h1>Message: ${message}</h1>
+//       <button onclick="print()">Print</button>
+//     </body>
+//   </html>`);
+//   win.document.close()
+// })                                                                      
+
+/*====================
+=========OOP==========
+====================*/
+
+//constructor
+// class BluePrint{
+//   constructor(firstName, lastName, age, student){
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//     this.student = student;
+//   }
+//   fullName() {
+//      return `${this.firstName} ${this.lastName}`
+//   }
+// }
+
+// let khalid = new BluePrint("Khalid", "Hasan", 20, true);
+// let Rayhan = new BluePrint("Sheikh", "Rayhan", 20, true);
+
+// console.log(khalid);
+// console.log(Rayhan);
+
+
+// class Calculator{
+//   constructor(aValue, bValue){
+//     this.a = aValue;
+//     this.b = bValue;
+//   }
+//   add(a = 0,b = 0){
+//     return this.a + this.b;
+//   }
+//   sub(a = 0,b = 0){
+//     return this.a - this.b;
+//   }
+//   mul(a = 1, b = 1){
+//     return this.a * this.b;
+//   }
+//   div(a =1 ,b =1){
+//     return this.a / this.b;
+//   }
+// }
+
+// let cal = new Calculator(5,10);
+
+// console.log('Sum: ', cal.add());
+// console.log('Sub: ', cal.sub(5,10));
+// console.log('Multiplication: ', cal.mul(5,10));
+// console.log('Divide: ', cal.div(5,10));
+
+
+// class Car{
+//   constructor(name, price, brand, image){
+//     this.carName = name;
+//     this.carPrice = price;
+//     this.carBrand = brand;
+//     this.carImage = image;
+//   }
+// }
+
+// let Toyota = new Car('Toyota Corolla' , 24500, 'Toyota', 'https://react-car-verse.vercel.app/images/toyota-corolla.jpg');
+
+// console.log(Toyota);
+
+
+//inheritance
+class Animal{
+  constructor(nameValue, ageValue, habitantValue){
+    this.name = nameValue;
+    this.age = ageValue;
+    this.habitant = habitantValue;
+  }
+  speak(speakValue){
+    return `${this.name} speakes in ${speakValue}`;
+  }
 }
+
+let dog = new Animal("BoB", 15, "Land");
+console.log(dog);
+console.log(dog.speak("Bark"));
+
+
+class Human extends Animal{
+  constructor(nameValue, ageValue, habitantValue, locationValue, countryValue){
+    super(nameValue, ageValue, habitantValue);
+    this.location = locationValue;
+    this.country = countryValue;
+  }
+}
+
+const Afrid = new Human('Afrid' , 22, 'Land', 'Feni', 'Bangladesh');
+console.log(Afrid);
+console.log(Afrid.speak("Bengali, English"));
+
