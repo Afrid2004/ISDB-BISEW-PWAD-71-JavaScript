@@ -738,15 +738,31 @@ console.log(dog);
 console.log(dog.speak("Bark"));
 
 
-class Human extends Animal{
-  constructor(nameValue, ageValue, habitantValue, locationValue, countryValue){
+// class Human extends Animal{
+//   constructor(nameValue, ageValue, habitantValue, locationValue, countryValue){
+//     super(nameValue, ageValue, habitantValue);
+//     this.location = locationValue;
+//     this.country = countryValue;
+//   }
+// }
+
+// const Afrid = new Human('Afrid' , 22, 'Land', 'Feni', 'Bangladesh');
+// console.log(Afrid);
+// console.log(Afrid.speak("Bengali, English"));
+
+//polimorphism
+class myAnimals extends Animal{
+  constructor(nameValue, ageValue, habitantValue, colorValue, foodValue){
     super(nameValue, ageValue, habitantValue);
-    this.location = locationValue;
-    this.country = countryValue;
+    this.color = colorValue;
+    this.food = foodValue;
+  }
+  speak(value){
+    return `${this.name} walk in the morning. ${this.name} speaks in ${value}`
   }
 }
 
-const Afrid = new Human('Afrid' , 22, 'Land', 'Feni', 'Bangladesh');
-console.log(Afrid);
-console.log(Afrid.speak("Bengali, English"));
+let Animals = new myAnimals('Birds', 2, 'Air', 'Black', 'Dal');
+console.log(Animals);
+console.log(Animals.speak("Kiwi"));
 
