@@ -722,20 +722,20 @@
 
 
 //inheritance
-class Animal{
-  constructor(nameValue, ageValue, habitantValue){
-    this.name = nameValue;
-    this.age = ageValue;
-    this.habitant = habitantValue;
-  }
-  speak(speakValue){
-    return `${this.name} speakes in ${speakValue}`;
-  }
-}
+// class Animal{
+//   constructor(nameValue, ageValue, habitantValue){
+//     this.name = nameValue;
+//     this.age = ageValue;
+//     this.habitant = habitantValue;
+//   }
+//   speak(speakValue){
+//     return `${this.name} speakes in ${speakValue}`;
+//   }
+// }
 
-let dog = new Animal("BoB", 15, "Land");
-console.log(dog);
-console.log(dog.speak("Bark"));
+// let dog = new Animal("BoB", 15, "Land");
+// console.log(dog);
+// console.log(dog.speak("Bark"));
 
 
 // class Human extends Animal{
@@ -751,18 +751,83 @@ console.log(dog.speak("Bark"));
 // console.log(Afrid.speak("Bengali, English"));
 
 //polimorphism
-class myAnimals extends Animal{
-  constructor(nameValue, ageValue, habitantValue, colorValue, foodValue){
-    super(nameValue, ageValue, habitantValue);
-    this.color = colorValue;
-    this.food = foodValue;
-  }
-  speak(value){
-    return `${this.name} walk in the morning. ${this.name} speaks in ${value}`
+// class myAnimals extends Animal{
+//   constructor(nameValue, ageValue, habitantValue, colorValue, foodValue){
+//     super(nameValue, ageValue, habitantValue);
+//     this.color = colorValue;
+//     this.food = foodValue;
+//   }
+//   speak(value){
+//     return `${this.name} walk in the morning. ${this.name} speaks in ${value}`
+//   }
+// }
+
+// let Animals = new myAnimals('Birds', 2, 'Air', 'Black', 'Dal');
+// console.log(Animals);
+// console.log(Animals.speak("Kiwi"));
+
+
+
+//abstraction
+// class Car{
+//   constructor(name, price, brand, image){
+//     this.carName = name;
+//     this.carPrice = price;
+//     this.carBrand = brand;
+//     this.carImage = image;
+//   }
+
+//   //abstraction
+//   engineStart(){
+//     console.log(`Engine Started`);
+//     this.spark();
+//     this.injectFuel();
+//     this.piston();
+//   }
+//   spark(){
+//     console.log(`Cark Spark`);
+//   }
+//   injectFuel(){
+//     console.log(`fuel Injected`);
+//   }
+//   piston(){
+//     console.log(`turened on piston`);
+//   }
+// }
+
+// let Toyota = new Car('Toyota Corolla' , 24500, 'Toyota', 'https://react-car-verse.vercel.app/images/toyota-corolla.jpg');
+
+// console.log(Toyota);
+// Toyota.engineStart();
+
+
+//destructering
+let person = {
+  firstName : "MD Faisal",
+  lastName : "Yousuf Afrid",
+  age : 22,
+  isStudent: true,
+  hobbies: ["Coding","Playing Cricket"],
+  address: {
+    street : "M/22, Anandanagar, Merul Badda",
+    city : "Dhaka",
+    zip : 1212
+  },
+  fullname : function(){
+    return this.firstName + " " + this.lastName;
   }
 }
+console.log(person);
+const {firstName, lastName, age, address:{street, city}} = person;
 
-let Animals = new myAnimals('Birds', 2, 'Air', 'Black', 'Dal');
-console.log(Animals);
-console.log(Animals.speak("Kiwi"));
+document.write(`
+    <h3>Firstname: ${firstName}</h3>
+    <h3>Lastname: ${lastName}</h3>
+    <h3>Fullname: ${person.fullname()}</h3>
+    <h3>Age: ${age}</h3>
+    <h3>Address: ${street}, ${city}</h3>
+  `)
 
+
+
+  
