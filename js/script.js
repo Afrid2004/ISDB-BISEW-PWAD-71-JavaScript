@@ -802,31 +802,60 @@
 
 
 //destructering
-let person = {
-  firstName : "MD Faisal",
-  lastName : "Yousuf Afrid",
-  age : 22,
-  isStudent: true,
-  hobbies: ["Coding","Playing Cricket"],
-  address: {
-    street : "M/22, Anandanagar, Merul Badda",
-    city : "Dhaka",
-    zip : 1212
-  },
-  fullname : function(){
-    return this.firstName + " " + this.lastName;
-  }
-}
-console.log(person);
-const {firstName, lastName, age, address:{street, city}} = person;
+// let person = {
+//   firstName : "MD Faisal",
+//   lastName : "Yousuf Afrid",
+//   age : 22,
+//   isStudent: true,
+//   hobbies: ["Coding","Playing Cricket"],
+//   address: {
+//     street : "M/22, Anandanagar, Merul Badda",
+//     city : "Dhaka",
+//     zip : 1212
+//   },
+//   fullname : function(){
+//     return this.firstName + " " + this.lastName;
+//   }
+// }
+// console.log(person);
+// const {firstName, lastName, age, address:{street, city}} = person;
 
-document.write(`
-    <h3>Firstname: ${firstName}</h3>
-    <h3>Lastname: ${lastName}</h3>
-    <h3>Fullname: ${person.fullname()}</h3>
-    <h3>Age: ${age}</h3>
-    <h3>Address: ${street}, ${city}</h3>
-  `)
+
+
+
+
+
+
+
+
+// document.write(`
+//     <h3>Firstname: ${firstName}</h3>
+//     <h3>Lastname: ${lastName}</h3>
+//     <h3>Fullname: ${person.fullname()}</h3>
+//     <h3>Age: ${age}</h3>
+//     <h3>Address: ${street}, ${city}</h3>
+//   `)
+
+
+//todo list
+ let form = document.getElementById("form"),
+ list = document.getElementById("list"),
+ listSL = 0;
+
+ form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const title = e.target.title.value;
+  listSL++;
+  const li = document.createElement("li");
+  li.setAttribute("class", "list-group-item d-flex align-items-center justify-content-between");
+  li.innerHTML = `${listSL}. ${title} <button onclick="deleteTodo(this)" class="btn btn-danger py-1">Delete</button>`;
+  list.appendChild(li);
+  e.target.reset();
+ })
+
+  function deleteTodo(btn){
+    btn.parentElement.remove();
+  }
 
 
 
