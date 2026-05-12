@@ -838,24 +838,24 @@
 
 
 //todo list
- let form = document.getElementById("form"),
- list = document.getElementById("list"),
- listSL = 0;
+//  let form = document.getElementById("form"),
+//  list = document.getElementById("list"),
+//  listSL = 0;
 
- form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const title = e.target.title.value;
-  listSL++;
-  const li = document.createElement("li");
-  li.setAttribute("class", "list-group-item d-flex align-items-center justify-content-between");
-  li.innerHTML = `${listSL}. ${title} <button onclick="deleteTodo(this)" class="btn btn-danger py-1">Delete</button>`;
-  list.appendChild(li);
-  e.target.reset();
- })
+//  form.addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   const title = e.target.title.value;
+//   listSL++;
+//   const li = document.createElement("li");
+//   li.setAttribute("class", "list-group-item d-flex align-items-center justify-content-between");
+//   li.innerHTML = `${listSL}. ${title} <button onclick="deleteTodo(this)" class="btn btn-danger py-1">Delete</button>`;
+//   list.appendChild(li);
+//   e.target.reset();
+//  })
 
-  function deleteTodo(btn){
-    btn.parentElement.remove();
-  }
+//   function deleteTodo(btn){
+//     btn.parentElement.remove();
+//   }
 
 
 
