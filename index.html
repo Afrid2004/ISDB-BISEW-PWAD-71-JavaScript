@@ -418,6 +418,17 @@
 
     <div>
       <div class="container py-5">
+        <form class="w-50 mx-auto mb-2" id="validateForm">
+          <h4 class="title mb-4">Form Validate</h4>
+          <input type="email" class="form-control mb-3" name="email" id="email" placeholder="example@gmail.com" required>
+          <button type="submit" class="btn btn-dark w-100">Submit Form</button>
+        </form>
+        <div class="w-50 mx-auto" id="output"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="container py-5">
         <div class="row"  id="allProduct">
           <div class="col-12">
             <div class="section-title text-center mb-4 pb-2">
@@ -431,6 +442,8 @@
         </div>
       </div>
     </div>
+
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -461,6 +474,8 @@
                                     <img class="pic-2" src="${secondImage}">  
                                     </div>
                                 </a>
+
+                                
                                 <a href="#" class="product-like-icon" data-tip="Add to Wishlist">
                                     <i class="far fa-heart"></i>
                                 </a>

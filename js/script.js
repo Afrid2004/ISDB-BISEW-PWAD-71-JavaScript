@@ -591,7 +591,6 @@
 //   console.log(fruits);
 // }
 
-
 // let form = document.getElementById("form");
 
 // form.addEventListener("submit" , (e) => {
@@ -654,7 +653,7 @@
 //     </body>
 //   </html>`);
 //   win.document.close()
-// })                                                                      
+// })
 
 /*====================
 =========OOP==========
@@ -678,7 +677,6 @@
 
 // console.log(khalid);
 // console.log(Rayhan);
-
 
 // class Calculator{
 //   constructor(aValue, bValue){
@@ -706,7 +704,6 @@
 // console.log('Multiplication: ', cal.mul(5,10));
 // console.log('Divide: ', cal.div(5,10));
 
-
 // class Car{
 //   constructor(name, price, brand, image){
 //     this.carName = name;
@@ -719,7 +716,6 @@
 // let Toyota = new Car('Toyota Corolla' , 24500, 'Toyota', 'https://react-car-verse.vercel.app/images/toyota-corolla.jpg');
 
 // console.log(Toyota);
-
 
 //inheritance
 // class Animal{
@@ -736,7 +732,6 @@
 // let dog = new Animal("BoB", 15, "Land");
 // console.log(dog);
 // console.log(dog.speak("Bark"));
-
 
 // class Human extends Animal{
 //   constructor(nameValue, ageValue, habitantValue, locationValue, countryValue){
@@ -765,8 +760,6 @@
 // let Animals = new myAnimals('Birds', 2, 'Air', 'Black', 'Dal');
 // console.log(Animals);
 // console.log(Animals.speak("Kiwi"));
-
-
 
 //abstraction
 // class Car{
@@ -800,7 +793,6 @@
 // console.log(Toyota);
 // Toyota.engineStart();
 
-
 //destructering
 // let person = {
 //   firstName : "MD Faisal",
@@ -820,14 +812,6 @@
 // console.log(person);
 // const {firstName, lastName, age, address:{street, city}} = person;
 
-
-
-
-
-
-
-
-
 // document.write(`
 //     <h3>Firstname: ${firstName}</h3>
 //     <h3>Lastname: ${lastName}</h3>
@@ -835,7 +819,6 @@
 //     <h3>Age: ${age}</h3>
 //     <h3>Address: ${street}, ${city}</h3>
 //   `)
-
 
 //todo list
 //  let form = document.getElementById("form"),
@@ -857,6 +840,22 @@
 //     btn.parentElement.remove();
 //   }
 
+let validateForm = document.getElementById("validateForm"),
+  validateOutput = document.getElementById("output");
 
-
-  
+validateForm.addEventListener("submit", (e) => {
+    validateOutput.innerHTML = "";
+    e.preventDefault();
+    let email = e.target.email.value.trim();
+  let emailRegex = /(?!\d)^([a-zA-Z0-9_]){4,}([@])([a-z]){3,}([.])([a-z]){2,}$/g;
+  let valid = emailRegex.test(email);
+  if (valid) {
+    validateOutput.innerHTML = `<div class="alert alert-success py-2 text-center" role="alert">
+  ${email} is a valid email!
+</div>`;
+  }else{
+    validateOutput.innerHTML = `<div class="alert alert-danger py-2 text-center" role="alert">
+  ${email} is not a valid email!
+</div>`;
+  }
+});
