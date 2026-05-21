@@ -4,15 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
-    
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/images/js.png" type="image/x-icon" />
     <title>All About JavaScript</title>
   </head>
   <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/product/">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cart/">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
     <!-- <h1>Hello, JavaScript!</h1>
 
     <button class="btn-primary">Click Me</button>
@@ -416,7 +445,7 @@
       </div>
     </div> -->
 
-    <div>
+    <!-- <div>
       <div class="container py-5">
         <form class="w-50 mx-auto mb-2" id="validateForm">
           <h4 class="title mb-4">Form Validate</h4>
@@ -425,25 +454,7 @@
         </form>
         <div class="w-50 mx-auto" id="output"></div>
       </div>
-    </div>
-
-    <div>
-      <div class="container py-5">
-        <div class="row"  id="allProduct">
-          <div class="col-12">
-            <div class="section-title text-center mb-4 pb-2">
-              <h4 class="title mb-4">Our products</h4>
-              <p class="text-muted para-desc mx-auto mb-0">
-                There is now an abundance of readable dummy texts. These are
-                usually used when a text is required purely to fill a space.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
+    </div> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -451,53 +462,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/script.js"></script>
-    <script>
-      let allProduct = document.getElementById("allProduct");
-      const getProduct = async () => {
-        try {
-          const res = await fetch("https://dummyjson.com/products");
-          const data = await res.json();
-          let products = data.products;
-          
-
-          products.map((product) => {
-            let { title, thumbnail, description, price } = product;
-            let secondImage = product.images.length > 1 ? product.images[1] : product.images[0];
-            
-            allProduct.innerHTML += `
-            <div class="col-md-3 col-sm-6 mb-3 d-flex">
-                        <div class="product-grid">
-                            <div class="product-image">
-                                <a href="#" class="image">
-                                    <div class="bg-white">
-                                    <img class="pic-1" src="${thumbnail}">
-                                    <img class="pic-2" src="${secondImage}">  
-                                    </div>
-                                </a>
-
-                                
-                                <a href="#" class="product-like-icon" data-tip="Add to Wishlist">
-                                    <i class="far fa-heart"></i>
-                                </a>
-                                <ul class="product-links">
-                                    <li><a href="#"><i class="fa fa-search"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product-content p-3">
-                                <h3 class="title"><a href="#">${title}</a></h3>
-                                <div class="price">$${price}</div>
-                            </div>
-                        </div>
-                    </div>
-              `;
-          });
-        } catch (err) {
-          console.log(err.message);
-        }
-      };
-      getProduct();
-    </script>
   </body>
 </html>

@@ -840,22 +840,22 @@
 //     btn.parentElement.remove();
 //   }
 
-let validateForm = document.getElementById("validateForm"),
-  validateOutput = document.getElementById("output");
+// let validateForm = document.getElementById("validateForm"),
+//   validateOutput = document.getElementById("output");
 
-validateForm.addEventListener("submit", (e) => {
-    validateOutput.innerHTML = "";
-    e.preventDefault();
-    let email = e.target.email.value.trim();
-  let emailRegex = /(?!\d)^([a-zA-Z0-9_]){4,}([@])([a-z]){3,}([.])([a-z]){2,}$/g;
-  let valid = emailRegex.test(email);
-  if (valid) {
-    validateOutput.innerHTML = `<div class="alert alert-success py-2 text-center" role="alert">
-  ${email} is a valid email!
-</div>`;
-  }else{
-    validateOutput.innerHTML = `<div class="alert alert-danger py-2 text-center" role="alert">
-  ${email} is not a valid email!
-</div>`;
-  }
-});
+// validateForm.addEventListener("submit", (e) => {
+//     validateOutput.innerHTML = "";
+//     e.preventDefault();
+//     let email = e.target.email.value.trim();
+//   let emailRegex = /(?!\d)^([a-zA-Z0-9_]){4,}([@])([a-z]){3,}([.])([a-z]){2,}$/g;
+//   let valid = emailRegex.test(email);
+//   if (valid) {
+//     validateOutput.innerHTML = `<div class="alert alert-success py-2 text-center" role="alert">
+//   ${email} is a valid email!
+// </div>`;
+//   }else{
+//     validateOutput.innerHTML = `<div class="alert alert-danger py-2 text-center" role="alert">
+//   ${email} is not a valid email!
+// </div>`;
+//   }
+// });
